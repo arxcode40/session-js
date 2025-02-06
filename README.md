@@ -103,13 +103,17 @@ session.decrement('count', 2)
 ```javascript
 // Forget a single key...
 session.forget('name')
- 
+
 // Forget multiple keys...
 session.forget(['name', 'status'])
 
 // If using slim version
+// Forget a single key...
 session('name', null)
- 
+
+// Forget multiple keys...
+session(['name', 'status'], null)
+
 session.flush()
 
 // If using slim version
