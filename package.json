@@ -1,5 +1,5 @@
 {
-  "name": "session",
+  "name": "session-js",
   "version": "1.0.0",
   "description": "Session storage management library inspired by Laravel Session",
   "main": "index.js",
