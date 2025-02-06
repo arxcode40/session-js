@@ -5,7 +5,12 @@ const session = {
 		return this._retrieve()
 	},
 	decrement: function(key, decrementBy = 1) {
+		if (isNaN(key)) {
+			return false
+		}
+
 		this.put(key, this.get(key, 0) - decrementBy)
+		return true
 	},
 	except: function(keys) {
 		return this._retrieve(keys, 'except')
@@ -15,14 +20,16 @@ const session = {
 	},
 	flush: function() {
 		sessionStorage.clear()
+		return true
 	},
 	forget: function(keys) {
 		if (Array.isArray(keys)) {
 			keys.forEach(key => sessionStorage.removeItem(key))
-			return
+			return true
 		}
 
 		sessionStorage.removeItem(keys)
+		return true
 	},
 	get: function(key, defaultValue = null) {
 		return JSON.parse(sessionStorage.getItem(key)) || defaultValue
@@ -31,7 +38,12 @@ const session = {
 		return this.get(key) !== null
 	},
 	increment: function(key, incrementBy = 1) {
+		if (isNaN(key)) {
+			return false
+		}
+
 		this.put(key, this.get(key, 0) + incrementBy)
+		return true
 	},
 	missing: function(key) {
 		return !this.has(key)
@@ -50,10 +62,14 @@ const session = {
 		if (Array.isArray(data)) {
 			data.push(value)
 			this.put(key, data)
+			return true
 		}
+
+		return false
 	},
 	put: function(key, value) {
 		sessionStorage.setItem(key, JSON.stringify(value))
+		return true
 	},
 	_retrieve(keys = null, include = null) {
         let data = {}
