@@ -1,0 +1,25 @@
+{
+  "name": "session",
+  "version": "1.0.0",
+  "description": "Session storage management library inspired by Laravel Session",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arxcode40/session-js.git"
+  },
+  "keywords": ["session", "session storage", "session management", "session-js", "laravel session"],
+  "author": {
+    "name": "arxcode40",
+    "email": "arxcode40@gmail.com",
+    "url": "https://github.com/arxcode40"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arxcode40/session-js/issues",
+    "email": "arxcode40@gmail.com"
+  },
+  "homepage": "https://github.com/arxcode40/session-js#readme"
+}
